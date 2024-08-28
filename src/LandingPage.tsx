@@ -5,17 +5,6 @@ import ThreeScene from "./ThreeScene"
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown"
 import Header from "./Header"
 
-// const LandingContainer = styled(Container)({
-//     display: "flex",
-//     flexDirection: "column",
-//     justifyContent: "center",
-//     alignItems: "center",
-//     height: "100vh",
-//     //textAlign: "center",
-//     position: "relative",
-//     marginTop: "64px", // Adjusted to account for header height
-// })
-
 const SectionContainer = styled(Container)({
     padding: "100px 0",
     textAlign: "center",
@@ -118,7 +107,7 @@ const LandingPage: React.FC = () => {
                     I'm always open to new opportunities and collaborations! If you're interested in working together or
                     just want to say hello, feel free to reach out via email or connect with me on LinkedIn.
                 </Typography>
-                <Button variant="outlined" color="primary" href="lucahaverty@gmail.com">
+                <Button variant="outlined" color="primary" href="mailto:lucahaverty@gmail.com">
                     Email Me
                 </Button>
             </SectionContainer>
