@@ -32,7 +32,6 @@ const LandingPage: React.FC = () => {
     const landingRef = useRef<HTMLDivElement | null>(null)
     const aboutRef = useRef<HTMLDivElement | null>(null)
     const projectsRef = useRef<HTMLDivElement | null>(null)
-    const experienceRef = useRef<HTMLDivElement | null>(null)
     const contactRef = useRef<HTMLDivElement | null>(null)
 
     const scrollToSection = (sectionId: string) => {
@@ -45,9 +44,6 @@ const LandingPage: React.FC = () => {
                 break
             case "projects":
                 projectsRef.current?.scrollIntoView({ behavior: "smooth" })
-                break
-            case "experience":
-                experienceRef.current?.scrollIntoView({ behavior: "smooth" })
                 break
             case "contact":
                 contactRef.current?.scrollIntoView({ behavior: "smooth" })
@@ -115,23 +111,6 @@ const LandingPage: React.FC = () => {
                     Some notable projects include a task management app built with React and Node.js, an e-commerce
                     platform with a custom-built CMS, and a social media analytics tool developed using Python and
                     Django.
-                </Typography>
-            </SectionContainer>
-
-            {/* Experience Section */}
-            <SectionContainer ref={experienceRef}>
-                <Typography variant="h3" color="primary" gutterBottom>
-                    Experience
-                </Typography>
-                <Typography variant="body1" color="textSecondary" paragraph>
-                    I have experience working in a range of environments, from startups to large corporations. Over the
-                    years, I've had the opportunity to work in different roles, including front-end developer, back-end
-                    developer, and full-stack developer. This diverse background has given me a well-rounded skill set
-                    and the ability to tackle various challenges.
-                </Typography>
-                <Typography variant="body1" color="textSecondary" paragraph>
-                    My most recent experience was at XYZ Company, where I led a team of developers in building scalable
-                    web applications and integrating third-party services.
                 </Typography>
             </SectionContainer>
 

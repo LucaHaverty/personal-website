@@ -12,7 +12,7 @@ import { Box } from "@mui/material"
 const ThreeScene: React.FC = () => {
     return (
         <Box display="flex" justifyContent="center">
-            <Canvas style={{ height: "50vh", width: "50vw" }}>
+            <Canvas style={{ height: "50vh" }}>
                 <ambientLight intensity={2} />
                 <directionalLight position={[10, 10, 5]} intensity={1} />
                 <Suspense fallback={null}>

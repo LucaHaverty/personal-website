@@ -36,8 +36,6 @@ const Header: React.FC<HeaderProps> = ({ scrollToSection }) => {
                 <Divider>|</Divider>
                 <HeaderButton onClick={() => scrollToSection("projects")}>Projects</HeaderButton>
                 <Divider>|</Divider>
-                <HeaderButton onClick={() => scrollToSection("experience")}>Experience</HeaderButton>
-                <Divider>|</Divider>
                 <HeaderButton onClick={() => scrollToSection("contact")}>Contact</HeaderButton>
             </Toolbar>
         </StyledAppBar>
