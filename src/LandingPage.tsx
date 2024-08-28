@@ -5,16 +5,16 @@ import ThreeScene from "./ThreeScene"
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown"
 import Header from "./Header"
 
-const LandingContainer = styled(Container)({
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
-    height: "100vh",
-    textAlign: "center",
-    position: "relative",
-    marginTop: "64px", // Adjusted to account for header height
-})
+// const LandingContainer = styled(Container)({
+//     display: "flex",
+//     flexDirection: "column",
+//     justifyContent: "center",
+//     alignItems: "center",
+//     height: "100vh",
+//     //textAlign: "center",
+//     position: "relative",
+//     marginTop: "64px", // Adjusted to account for header height
+// })
 
 const SectionContainer = styled(Container)({
     padding: "100px 0",
@@ -24,8 +24,8 @@ const SectionContainer = styled(Container)({
 
 const ArrowButton = styled(IconButton)({
     position: "absolute",
-    bottom: "80px",
     color: "#ff4081", // Using theme color
+    bottom: 30,
 })
 
 const LandingPage: React.FC = () => {
@@ -60,22 +60,24 @@ const LandingPage: React.FC = () => {
     return (
         <>
             <Header scrollToSection={scrollToSection} />
-            <LandingContainer ref={landingRef}>
+            <SectionContainer ref={landingRef}>
                 <Typography variant="h2" color="primary" gutterBottom>
-                    Welcome to My Personal Website
+                    Welcome
                 </Typography>
                 <Typography variant="h5" color="textSecondary" gutterBottom>
-                    I'm a Developer, Designer, and Creator
+                    I'm Luca Haverty, a Developer, Designer, and Creator
                 </Typography>
-                <Box mt={4}>
+                {/*  <Box marginTop={4}>
                     <Button variant="contained" color="primary" size="large">
                         Get in Touch
                     </Button>
+                </Box> */}
+                <Box display="flex" justifyContent="center">
+                    <ArrowButton onClick={scrollToAbout}>
+                        <KeyboardArrowDownIcon fontSize="large" />
+                    </ArrowButton>
                 </Box>
-                <ArrowButton onClick={scrollToAbout}>
-                    <KeyboardArrowDownIcon fontSize="large" />
-                </ArrowButton>
-            </LandingContainer>
+            </SectionContainer>
 
             {/* About Section */}
             <SectionContainer ref={aboutRef}>
@@ -85,14 +87,7 @@ const LandingPage: React.FC = () => {
                 <Typography variant="body1" color="textSecondary" paragraph>
                     Hello! I'm John Doe, a passionate software developer with a love for creating innovative solutions
                     and stunning digital experiences. With over 5 years of experience in web development, I specialize
-                    in building high-performance applications using the latest technologies. My journey began with a
-                    fascination for how technology can solve real-world problems, and I've since dedicated myself to
-                    mastering the art of programming.
-                </Typography>
-                <Typography variant="body1" color="textSecondary" paragraph>
-                    When I'm not coding, you can find me exploring new places, experimenting with different cuisines, or
-                    capturing moments through my lens. I'm always on the lookout for new challenges and opportunities to
-                    collaborate with like-minded individuals who share a passion for technology and creativity.
+                    in building high-performance applications using the latest technologies.
                 </Typography>
                 <ThreeScene />
             </SectionContainer>
@@ -123,7 +118,7 @@ const LandingPage: React.FC = () => {
                     I'm always open to new opportunities and collaborations! If you're interested in working together or
                     just want to say hello, feel free to reach out via email or connect with me on LinkedIn.
                 </Typography>
-                <Button variant="outlined" color="primary" href="mailto:john.doe@example.com">
+                <Button variant="outlined" color="primary" href="lucahaverty@gmail.com">
                     Email Me
                 </Button>
             </SectionContainer>
