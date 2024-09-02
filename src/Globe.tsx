@@ -44,7 +44,7 @@ const Pin: React.FC<{ position: Vector3 }> = ({ position }) => {
 }
 
 const Globe: React.FC = () => {
-    const texture = useTexture("/globetex.png") // Ensure texture is in public folder
+    const texture = useTexture("/textures/globe.png") // Ensure texture is in public folder
 
     // Convert geographic coordinates to 3D coordinates
     /*     const lat = 45.52 // Latitude for Portland

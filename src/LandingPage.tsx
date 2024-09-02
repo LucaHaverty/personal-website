@@ -1,9 +1,15 @@
-import React, { useRef } from "react"
+import React, { Suspense, useRef } from "react"
 import { Box, Container, Typography, Button, IconButton } from "@mui/material"
 import { styled } from "@mui/material/styles"
 import ThreeScene from "./ThreeScene"
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown"
+import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft"
+import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight"
 import Header from "./Header"
+import RotatingCube from "./RotatingCube"
+import { Canvas } from "@react-three/fiber"
+import { OrbitControls } from "@react-three/drei"
+import GridPlane from "./GridPlane"
 
 const SectionContainer = styled(Container)({
     padding: "100px 0",
@@ -48,6 +54,15 @@ const LandingPage: React.FC = () => {
 
     return (
         <>
+            <Canvas style={{ height: "100vh" }}>
+                <ambientLight intensity={2} />
+                <directionalLight position={[10, 10, 5]} intensity={1} />
+                <Suspense fallback={null}>
+                    {/*<RotatingCube /> */}
+                    <GridPlane />
+                </Suspense>
+                <OrbitControls />
+            </Canvas>
             <Header scrollToSection={scrollToSection} />
             <SectionContainer ref={landingRef}>
                 <Typography variant="h2" color="primary" gutterBottom>
@@ -96,6 +111,14 @@ const LandingPage: React.FC = () => {
                     platform with a custom-built CMS, and a social media analytics tool developed using Python and
                     Django.
                 </Typography>
+                <Canvas style={{ height: "100vh" }}>
+                    <ambientLight intensity={2} />
+                    <directionalLight position={[10, 10, 5]} intensity={1} />
+                    <Suspense fallback={null}>
+                        <RotatingCube />
+                    </Suspense>
+                    <OrbitControls />
+                </Canvas>
             </SectionContainer>
 
             {/* Contact Section */}

@@ -1,6 +1,7 @@
 import React, { useRef, useMemo, useCallback, useState } from "react"
 import { useThree } from "@react-three/fiber"
 import { Mesh, TextureLoader, CanvasTexture, Raycaster, Vector2 } from "three"
+import { useFrame } from "react-three-fiber"
 
 const RotatingCube: React.FC = () => {
     const cubeRef = useRef<Mesh>(null!)
@@ -78,11 +79,11 @@ const RotatingCube: React.FC = () => {
         }
     }, [canvasTexture, isHover])
 
-    /* // Rotate the cube on each frame
+    // Rotate the cube on each frame
     useFrame(() => {
         cubeRef.current.rotation.x += 0.01
         cubeRef.current.rotation.y += 0.01
-    }) */
+    })
 
     // Handle pointer events
     const handlePointerMove = useCallback(
