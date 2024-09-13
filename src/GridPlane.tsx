@@ -1,6 +1,5 @@
 import React from "react"
-import { Canvas, useLoader } from "@react-three/fiber"
-import { OrbitControls } from "@react-three/drei"
+import { useLoader } from "@react-three/fiber"
 import * as THREE from "three"
 
 const GridPlane: React.FC = () => {
