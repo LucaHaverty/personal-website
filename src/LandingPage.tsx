@@ -8,8 +8,9 @@ import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight"
 import Header from "./Header"
 import RotatingCube from "./RotatingCube"
 import { Canvas } from "@react-three/fiber"
-import { OrbitControls } from "@react-three/drei"
+import { OrbitControls, PerspectiveCamera } from "@react-three/drei"
 import GridPlane from "./GridPlane"
+import { Euler } from "three"
 
 const SectionContainer = styled(Container)({
     padding: "100px 0",
@@ -54,14 +55,20 @@ const LandingPage: React.FC = () => {
 
     return (
         <>
-            <Canvas style={{ height: "100vh" }}>
+            <Canvas style={{ height: "100vh", position: "absolute" }}>
                 <ambientLight intensity={2} />
                 <directionalLight position={[10, 10, 5]} intensity={1} />
+                <PerspectiveCamera
+                    makeDefault // Makes this the default camera
+                    position={[0, 2, 0]} // Position the camera at [x, y, z]
+                    rotation={new Euler(-1, 0, 0)}
+                    fov={60} // Field of view
+                />
                 <Suspense fallback={null}>
                     {/*<RotatingCube /> */}
                     <GridPlane />
                 </Suspense>
-                <OrbitControls />
+                {/*                 <OrbitControls /> */}
             </Canvas>
             <Header scrollToSection={scrollToSection} />
             <SectionContainer ref={landingRef}>

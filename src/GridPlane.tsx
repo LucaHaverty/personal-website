@@ -10,7 +10,7 @@ const GridPlane: React.FC = () => {
     // Set texture properties to repeat
     gridTexture.wrapS = THREE.RepeatWrapping
     gridTexture.wrapT = THREE.RepeatWrapping
-    gridTexture.repeat.set(2, 2)
+    gridTexture.repeat.set(6, 6)
 
     return (
         <mesh rotation={[-Math.PI / 2, 0, 0]}>
